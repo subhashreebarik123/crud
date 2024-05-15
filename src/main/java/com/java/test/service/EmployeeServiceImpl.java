@@ -19,4 +19,16 @@ public class EmployeeServiceImpl implements  EmployeeService {
   public void display(Employee employee) {
     employeeRepositoryImpl.print(employee);
   }
+
+  @Override
+  public Employee getEmployee(int employeeNumber) {
+    return employeeRepositoryImpl.getEmployee(employeeNumber);
+  }
+
+  @Override
+  public void deleteEmployee(int employeeNumber) {
+     employeeRepositoryImpl.deleteEmployee(employeeNumber);
+
+  }
+
 }

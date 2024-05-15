@@ -1,5 +1,6 @@
 package com.java.test.repository;
 
+import com.java.test.mapper.EmployeeMapper;
 import com.java.test.model.Employee;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.jdbc.core.JdbcTemplate;
@@ -10,10 +11,26 @@ public class EmployeeRepositoryImpl  implements EmployeeRepository{
 
   @Autowired
     private JdbcTemplate jdbcTemplate;
+  @Autowired
+  private EmployeeMapper employeeMapper;
 
     @Override
     public void print(Employee employee) {
         int update = jdbcTemplate.update("insert into Employee(name,number,salary) values (?,?,?)",
                 employee.getName(),employee.getNumber(),employee.getSalary());
     }
+
+  @Override
+  public Employee getEmployee(int employeeNumber) {
+      Employee employee = jdbcTemplate.queryForObject("select name, number, salary from Employee where number=?", new Object[]{employeeNumber}, employeeMapper);
+    return employee;
+  }
+
+  @Override
+  public void deleteEmployee(int employeeNumber) {
+      jdbcTemplate.update("delete from Employee where number=?", new Object[]{employeeNumber});
+
+  }
+
+
 }
