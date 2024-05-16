@@ -9,4 +9,8 @@ public interface EmployeeRepository {
     Employee getEmployee(int employeeNumber);
 
     void deleteEmployee(int employeeNumber);
+
+    void updateEmployee(int employeeSalary);
+
+    void  updateEmployee(Employee employee);
 }

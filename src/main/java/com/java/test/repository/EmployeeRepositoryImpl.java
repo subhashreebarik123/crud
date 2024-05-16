@@ -32,5 +32,18 @@ public class EmployeeRepositoryImpl  implements EmployeeRepository{
 
   }
 
+  @Override
+  public void updateEmployee(int employeeSalary) {
+
+  }
+
+  @Override
+  public void updateEmployee(Employee employee) {
+    jdbcTemplate.update("update  Employee set salary='2400' where name =?", new Object[]{employee.getName()});
+  }
+
+
+
+
 
 }

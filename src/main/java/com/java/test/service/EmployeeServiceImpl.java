@@ -4,9 +4,6 @@ import com.java.test.model.Employee;
 import com.java.test.repository.EmployeeRepositoryImpl;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
-import org.springframework.web.bind.annotation.PostMapping;
-import org.springframework.web.bind.annotation.RequestBody;
-import org.springframework.web.bind.annotation.RestController;
 
 @Service
 public class EmployeeServiceImpl implements  EmployeeService {
@@ -17,6 +14,7 @@ public class EmployeeServiceImpl implements  EmployeeService {
 
   @Override
   public void display(Employee employee) {
+
     employeeRepositoryImpl.print(employee);
   }
 
@@ -27,8 +25,18 @@ public class EmployeeServiceImpl implements  EmployeeService {
 
   @Override
   public void deleteEmployee(int employeeNumber) {
-     employeeRepositoryImpl.deleteEmployee(employeeNumber);
+    employeeRepositoryImpl.deleteEmployee(employeeNumber);
 
   }
 
+  @Override
+  public Employee updateEmployee(int employeeSalary) {
+    return null;
+  }
+
+  @Override
+  public void  updateEmployee(Employee employee) {
+    employeeRepositoryImpl.updateEmployee(employee);
+
+  }
 }

@@ -18,17 +18,25 @@ public class EmployeeController {
        return "Employee is Succesfully Created";
    }
 
-   @GetMapping("/employee/{id}")
-   public Employee getEmployee(@PathVariable int id){
-       return  employeeServiceimpl.getEmployee(id);
-   }
+    @GetMapping("/employee/{id}")
+    public Employee getEmployee(@PathVariable int id){
+        return  employeeServiceimpl.getEmployee(id);
+    }
 
-   @DeleteMapping("/employee/{id}")
+    @DeleteMapping("/employee/{id}")
     public String deleteEmployee(@PathVariable  int id){
        employeeServiceimpl.deleteEmployee(id);
 
        return "Employee deleted having employee id:" + id;
    }
+   @PutMapping("/employee/update")
+    public String  updateEmployee(@RequestBody Employee employee) {
+        employeeServiceimpl.updateEmployee(employee);
+        return "Employee updated:"+employee.getName();
+
+   }
+   }
 
 
-}
+
+

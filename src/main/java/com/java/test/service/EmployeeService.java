@@ -9,4 +9,8 @@ public interface EmployeeService {
      Employee getEmployee(int employeeNumber);
 
      void deleteEmployee (int employeeNumber);
+
+     Employee updateEmployee(int employeeSalary);
+
+     void updateEmployee(Employee employee);
 }
