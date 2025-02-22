@@ -35,6 +35,8 @@ public class EmployeeController {
         return "Employee updated:"+employee.getName();
 
    }
+
+   //This method is used to update employeeName
    @PutMapping("/employee/update")
     public String updateEmployeeName(@RequestBody String employeeName){
        employeeServiceimpl.updateEmplyeeName(employeeName);
