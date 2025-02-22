@@ -13,4 +13,6 @@ public interface EmployeeService {
      Employee updateEmployee(int employeeSalary);
 
      void updateEmployee(Employee employee);
+
+     void updateEmplyeeName(String employeeName);
 }

@@ -35,6 +35,12 @@ public class EmployeeController {
         return "Employee updated:"+employee.getName();
 
    }
+   @PutMapping("/employee/update")
+    public String updateEmployeeName(@RequestBody String employeeName){
+       employeeServiceimpl.updateEmplyeeName(employeeName);
+       return "Employee updated :"+employeeName;
+   }
+
    }
 
 

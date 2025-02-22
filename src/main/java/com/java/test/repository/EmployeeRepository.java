@@ -13,4 +13,6 @@ public interface EmployeeRepository {
     void updateEmployee(int employeeSalary);
 
     void  updateEmployee(Employee employee);
+
+    void updateEmployeeName(String employeeName);
 }
